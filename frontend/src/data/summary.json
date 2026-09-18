@@ -1,0 +1,317 @@
+{
+  "sourceVideo": "demo.mp4",
+  "detectors": {
+    "hough_circles": {
+      "detector": "hough_circles",
+      "label": "Round-Object Detection",
+      "description": "Finds circular parts (bottles, vials, pills, washers, wheels) using the Hough Circle Transform.",
+      "totalFrames": 200,
+      "framesWithDetections": 190,
+      "totalDetections": 4976,
+      "avgDetectionsPerFrame": 24.88,
+      "maxDetectionsInFrame": 33,
+      "representativeFrame": {
+        "frame": "frame_00097.png",
+        "image": "/results/hough-circles.png",
+        "detections": [
+          {
+            "center": [
+              36.60000228881836,
+              330.6000061035156
+            ],
+            "radius": 51.68000411987305
+          },
+          {
+            "center": [
+              66.60000610351562,
+              329.4000244140625
+            ],
+            "radius": 50.60000228881836
+          },
+          {
+            "center": [
+              108.60000610351562,
+              54.60000228881836
+            ],
+            "radius": 229.27999877929688
+          },
+          {
+            "center": [
+              108.60000610351562,
+              330.6000061035156
+            ],
+            "radius": 28.760000228881836
+          },
+          {
+            "center": [
+              132.60000610351562,
+              330.6000061035156
+            ],
+            "radius": 52.28000259399414
+          },
+          {
+            "center": [
+              156.60000610351562,
+              330.6000061035156
+            ],
+            "radius": 52.15999984741211
+          },
+          {
+            "center": [
+              186.60000610351562,
+              330.6000061035156
+            ],
+            "radius": 50.0
+          },
+          {
+            "center": [
+              246.60000610351562,
+              48.60000228881836
+            ],
+            "radius": 331.8800048828125
+          },
+          {
+            "center": [
+              246.60000610351562,
+              186.60000610351562
+            ],
+            "radius": 193.52001953125
+          },
+          {
+            "center": [
+              246.60000610351562,
+              329.4000244140625
+            ],
+            "radius": 29.840002059936523
+          },
+          {
+            "center": [
+              246.60000610351562,
+              467.4000244140625
+            ],
+            "radius": 92.96000671386719
+          },
+          {
+            "center": [
+              387.0000305175781,
+              330.6000061035156
+            ],
+            "radius": 29.1200008392334
+          },
+          {
+            "center": [
+              389.4000244140625,
+              48.60000228881836
+            ],
+            "radius": 331.8800048828125
+          },
+          {
+            "center": [
+              503.4000244140625,
+              328.20001220703125
+            ],
+            "radius": 52.15999984741211
+          },
+          {
+            "center": [
+              534.6000366210938,
+              479.4000244140625
+            ],
+            "radius": 104.72000122070312
+          },
+          {
+            "center": [
+              545.4000244140625,
+              331.8000183105469
+            ],
+            "radius": 48.44000244140625
+          },
+          {
+            "center": [
+              569.4000244140625,
+              328.20001220703125
+            ],
+            "radius": 52.76000213623047
+          },
+          {
+            "center": [
+              593.4000244140625,
+              328.20001220703125
+            ],
+            "radius": 52.6400032043457
+          }
+        ]
+      }
+    },
+    "hough_lines": {
+      "detector": "hough_lines",
+      "label": "Alignment / Edge Detection",
+      "description": "Finds straight edges (conveyor rails, part edges) using the probabilistic Hough Line Transform.",
+      "totalFrames": 200,
+      "framesWithDetections": 190,
+      "totalDetections": 767,
+      "avgDetectionsPerFrame": 3.83,
+      "maxDetectionsInFrame": 5,
+      "representativeFrame": {
+        "frame": "frame_00022.png",
+        "image": "/results/hough-lines.png",
+        "detections": [
+          {
+            "point1": [
+              0,
+              375
+            ],
+            "point2": [
+              639,
+              375
+            ],
+            "length": 639.0,
+            "angle_deg": 0.0
+          },
+          {
+            "point1": [
+              0,
+              279
+            ],
+            "point2": [
+              639,
+              279
+            ],
+            "length": 639.0,
+            "angle_deg": 0.0
+          },
+          {
+            "point1": [
+              0,
+              380
+            ],
+            "point2": [
+              639,
+              380
+            ],
+            "length": 639.0,
+            "angle_deg": 0.0
+          },
+          {
+            "point1": [
+              0,
+              284
+            ],
+            "point2": [
+              639,
+              284
+            ],
+            "length": 639.0,
+            "angle_deg": 0.0
+          },
+          {
+            "point1": [
+              500,
+              307
+            ],
+            "point2": [
+              540,
+              308
+            ],
+            "length": 40.01249804748511,
+            "angle_deg": 1.4320961841646465
+          }
+        ]
+      }
+    },
+    "contour_defect_segmentation": {
+      "detector": "contour_defect_segmentation",
+      "label": "Defect / Shape Segmentation",
+      "description": "Thresholds and outlines blobs, flagging any whose size or shape falls outside the expected range as a defect.",
+      "totalFrames": 200,
+      "framesWithDetections": 190,
+      "totalDetections": 935,
+      "totalDefectsFlagged": 77,
+      "framesWithDefect": 77,
+      "representativeFrame": {
+        "frame": "frame_00000.png",
+        "image": "/results/contour-defects.png",
+        "detections": [
+          {
+            "bbox": [
+              531,
+              301,
+              59,
+              59
+            ],
+            "area": 2690.0,
+            "aspect_ratio": 1.0,
+            "is_defect": false
+          },
+          {
+            "bbox": [
+              251,
+              301,
+              59,
+              59
+            ],
+            "area": 2690.0,
+            "aspect_ratio": 1.0,
+            "is_defect": false
+          },
+          {
+            "bbox": [
+              111,
+              301,
+              59,
+              59
+            ],
+            "area": 2691.5,
+            "aspect_ratio": 1.0,
+            "is_defect": false
+          },
+          {
+            "bbox": [
+              0,
+              301,
+              30,
+              59
+            ],
+            "area": 1345.0,
+            "aspect_ratio": 0.5084745762711864,
+            "is_defect": true
+          },
+          {
+            "bbox": [
+              391,
+              300,
+              69,
+              68
+            ],
+            "area": 2888.5,
+            "aspect_ratio": 1.0147058823529411,
+            "is_defect": false
+          }
+        ]
+      }
+    },
+    "tamper_detection": {
+      "detector": "tamper_detection",
+      "label": "Camera Tamper / Occlusion Detection",
+      "description": "Watches the camera feed's own statistics (background diff, frame variance, edge density) to flag blocking or movement of the camera itself.",
+      "totalFrames": 200,
+      "tamperedFrameCount": 10,
+      "reasonBreakdown": {
+        "camera_blocked": 10
+      },
+      "firstTamperedFrame": "frame_00120.png",
+      "representativeFrame": {
+        "frame": "frame_00122.png",
+        "image": "/results/tamper-detection.png",
+        "detections": {
+          "tampered": true,
+          "reason": "camera_blocked",
+          "diff_ratio": 1.0,
+          "edge_density": 0.0,
+          "std": 0.0,
+          "frame_count": 123
+        }
+      }
+    }
+  }
+}

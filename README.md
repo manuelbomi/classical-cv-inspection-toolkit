@@ -237,7 +237,15 @@ classical-cv-inspection-toolkit/
 │   ├── test_hough_lines.py
 │   ├── test_contour_defect_segmentation.py
 │   └── test_tamper_detection.py
-├── .github/workflows/ci.yml                # lint (ruff) + test (pytest) on push/PR
+├── frontend/                                # React + TypeScript results viewer (see "Results Viewer" below)
+│   ├── src/
+│   │   ├── App.tsx
+│   │   ├── types.ts                         # TS types mirroring report.json
+│   │   └── data/summary.json                # summary stats generated from real report.json output
+│   └── public/results/*.png                 # real annotated detector output shown in the viewer
+├── docs/
+│   └── screenshots/                         # README/viewer screenshots (small, tracked PNGs)
+├── .github/workflows/ci.yml                # lint (ruff) + test (pytest) + frontend build/typecheck on push/PR
 ├── Dockerfile
 ├── requirements.txt
 ├── pyproject.toml
@@ -306,6 +314,34 @@ files or network access are required. They check real behavior, not just
 ![demo](PASTE_GOOGLE_DRIVE_OR_HOSTED_LINK_HERE)
 
 Demo video is hosted externally — replace the placeholder link above with your hosted video URL.
+
+## Results Viewer
+
+A small React + TypeScript app (`frontend/`) for reviewing real detector output — the kind of
+results/QA view a solution engineer would show a customer, not a mockup. It reads the actual
+`report.json` produced by the CLI (via a small generated `frontend/src/data/summary.json`,
+strongly typed against `frontend/src/types.ts`) and displays the real annotated PNG frames each
+detector wrote out for the repo's own synthetic demo clip.
+
+![Results viewer](docs/screenshots/results-viewer.png)
+
+| Detector | Annotated output | What it shows |
+|---|---|---|
+| `hough_circles` | ![Hough circles](docs/screenshots/detector-hough-circles.png) | Green outlines are circles voted for by the Hough Circle Transform (red dot = detected center); real conveyor parts are found alongside the extra spurious circles that default, untuned parameters produce on this scene. |
+| `hough_lines` | ![Hough lines](docs/screenshots/detector-hough-lines.png) | Yellow segments are straight edges found by the probabilistic Hough Line Transform — the two long horizontal lines are the conveyor guide rails used for alignment checking. |
+| `contour_defect_segmentation` | ![Contour defects](docs/screenshots/detector-contour-defects.png) | Each box is a segmented blob: green = shape/size within the expected range, red = flagged as a defect (the irregular polygon standing in for a chipped/malformed part). |
+| `tamper_detection` | ![Tamper detection](docs/screenshots/detector-tamper-detection.png) | The tamper detector watches the feed's own statistics, not scene contents — this frame is the simulated lens-blackout in the demo clip, correctly caught and labeled `TAMPER: camera_blocked`. |
+
+### Run it locally
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Then open the printed local URL (Vite's default is `http://localhost:5173`). `npm run build` runs
+a strict `tsc --noEmit` type check before building to `frontend/dist/`.
 
 ## License
 
