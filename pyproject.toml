@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "classical-cv-inspection-toolkit"
+version = "0.1.0"
+description = "Classical (non-deep-learning) OpenCV toolkit for round-object detection, alignment checks, defect segmentation, and camera tamper detection."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Emmanuel Oyekanlu" }]
+dependencies = [
+    "opencv-python>=4.8,<5",
+    "numpy>=1.24,<3",
+]
+
+[project.scripts]
+cvtoolkit = "cvtoolkit.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
