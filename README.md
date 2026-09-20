@@ -311,7 +311,7 @@ files or network access are required. They check real behavior, not just
 
 ## Demo
 
-![demo](PASTE_GOOGLE_DRIVE_OR_HOSTED_LINK_HERE)
+![demo](https://drive.google.com/file/d/1Kbi_856valEE89tx_SsrxTSWR-kFlE8D/view?usp=sharing)
 
 Demo video is hosted externally — replace the placeholder link above with your hosted video URL.
 
