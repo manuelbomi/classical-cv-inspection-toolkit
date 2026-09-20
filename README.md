@@ -313,7 +313,7 @@ files or network access are required. They check real behavior, not just
 
 ![demo](https://drive.google.com/file/d/1Kbi_856valEE89tx_SsrxTSWR-kFlE8D/view?usp=sharing)
 
-Demo video is hosted externally — replace the placeholder link above with your hosted video URL.
+See some resukts on the project's Google Drive link here: https://drive.google.com/file/d/1Kbi_856valEE89tx_SsrxTSWR-kFlE8D/view?usp=sharing
 
 ## Results Viewer
 
